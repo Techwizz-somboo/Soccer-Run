@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour {
 
 	public float speed;
 	public Text countText;
+    public Text LevelDescription;
 	public static bool pressedEscape = false;
 
 	private Rigidbody rb;
@@ -19,7 +20,11 @@ public class PlayerController : MonoBehaviour {
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
-		if (Input.GetKeyDown("escape"))
+        if (Input.GetKeyDown("return"))
+        {
+            LevelDescription.gameObject.SetActive(false);
+        }
+        if (Input.GetKeyDown("escape"))
 		{
 			if (pressedEscape == false) {
 				Debug.Log ("Menu loaded!");
